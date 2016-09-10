@@ -1,34 +1,39 @@
-<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
 
-	<display-name>UserService</display-name>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application-context.xml</param-value>
+    </context-param>
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
-			 classpath:application-context.xml
-		</param-value>
-	</context-param>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
 
-	<!-- listener for loading the spring context bean factory -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+    <servlet>
+        <servlet-name>jaxws-servlet</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSSpringServlet</servlet-class>
+    </servlet>
 
-	<!-- listener for enabling the spring rest components -->
-	<listener>
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-	</listener>
-
-	<servlet>
-		<servlet-name>User Servlet</servlet-name>
+    <servlet-mapping>
+        <servlet-name>jaxws-servlet</servlet-name>
+        <url-pattern>*.ws</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+		<servlet-name>User-Servlet</servlet-name>
 		<servlet-class>com.test.user.UserServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>User Servlet</servlet-name>
+		<servlet-name>User-Servlet</servlet-name>
 		<url-pattern>/user</url-pattern>
 	</servlet-mapping>
-
+	
 </web-app>

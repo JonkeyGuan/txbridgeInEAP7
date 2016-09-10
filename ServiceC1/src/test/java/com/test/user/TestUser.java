@@ -4,8 +4,7 @@ import com.test.user.domain.User;
 import com.test.user.service.UserService;
 
 public class TestUser {
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
 	UserService client = ClientFactory.getClient();
 

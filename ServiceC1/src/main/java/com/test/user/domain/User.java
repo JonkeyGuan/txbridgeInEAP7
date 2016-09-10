@@ -4,39 +4,39 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-	private static final long serialVersionUID = -1314959919648108817L;
+    private static final long serialVersionUID = -1314959919648108817L;
 
-	public User() {
-	};
+    public User() {
+    };
 
-	public User(String id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+    public User(String id, String name) {
+	super();
+	this.id = id;
+	this.name = name;
+    }
 
-	private String id;
-	private String name;
+    private String id;
+    private String name;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+	return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+	this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+	return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+	this.name = name;
+    }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
-	}
+    @Override
+    public String toString() {
+	return "User [id=" + id + ", name=" + name + "]";
+    }
 
 }

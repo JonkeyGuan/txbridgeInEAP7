@@ -1,20 +1,25 @@
 package com.test.user.service;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
-import javax.jws.soap.SOAPBinding.Style;
 
 import com.test.user.domain.User;
 
 @WebService
-@SOAPBinding(style = Style.RPC)
+@SOAPBinding(style = SOAPBinding.Style.RPC, use = SOAPBinding.Use.LITERAL)
 public interface UserService {
 
-    String ping();
+    @WebMethod
+    public String ping();
 
-    User getUser(String id);
+    @WebMethod
+    public User getUser(String id);
 
-    void updateUser(User user);
+    @WebMethod
+    public void updateUser(User user);
 
-    void addUser(User user);
+    @WebMethod
+    public void addUser(User user);
+
 }

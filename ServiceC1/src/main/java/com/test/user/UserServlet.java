@@ -14,7 +14,7 @@ public class UserServlet extends HttpServlet {
 
     private static final long serialVersionUID = -7003525307704686462L;
 
-    private static AtomicLong userSeq = new AtomicLong(1);
+    private static AtomicLong userSeq = new AtomicLong(3);
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
